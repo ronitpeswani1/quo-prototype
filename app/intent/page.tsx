@@ -1,34 +1,36 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
-export default function Home() {
+export default function Intent() {
   const router = useRouter();
+  const params = useSearchParams();
+  const needsToSell = params.get("sell");
 
   return (
     <main className="flex min-h-screen items-center justify-center">
       <div className="w-full max-w-md text-center space-y-6">
         <h1 className="text-2xl font-semibold">
-          Are you buying a property?
+          How would you like to get started?
         </h1>
-
-        <p className="text-sm text-gray-500">
-          This helps us tailor your offer experience.
-        </p>
 
         <div className="space-y-3">
           <button
-            onClick={() => router.push("/intent")}
+            onClick={() =>
+              needsToSell ? router.push("/note") : router.push("/note")
+            }
             className="w-full rounded-md border px-4 py-3"
           >
-            Buyer
+            Learn how offers work
           </button>
 
           <button
-            onClick={() => router.push("/intent?sell=true")}
+            onClick={() =>
+              needsToSell ? router.push("/note") : router.push("/note")
+            }
             className="w-full rounded-md border px-4 py-3"
           >
-            Buyer who also needs to sell
+            I have a property in mind
           </button>
         </div>
       </div>
