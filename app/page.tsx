@@ -1,37 +1,10 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-
-export default function Home() {
-  const router = useRouter();
-
+// app/page.tsx
+export default function HomePage() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <div className="w-full max-w-md text-center space-y-6">
-        <h1 className="text-2xl font-semibold">
-          Are you buying a property?
-        </h1>
+    <main style={{ padding: 40 }}>
+      <h1>Quo – Entry Flow Prototype</h1>
 
-        <p className="text-sm text-gray-500">
-          This helps us tailor your offer experience.
-        </p>
-
-        <div className="space-y-3">
-          <button
-            onClick={() => router.push("/intent")}
-            className="w-full rounded-md border px-4 py-3"
-          >
-            Buyer
-          </button>
-
-          <button
-            onClick={() => router.push("/intent?sell=true")}
-            className="w-full rounded-md border px-4 py-3"
-          >
-            Buyer who also needs to sell
-          </button>
-        </div>
-      </div>
+      <a href="/intent">Start</a>
     </main>
   );
 }
