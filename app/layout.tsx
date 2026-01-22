@@ -1,14 +1,18 @@
-// app/layout.tsx
-import type { ReactNode } from "react";
+export const metadata = {
+  title: "Quo Prototype",
+  description: "Entry flow prototype",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: ReactNode;
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body style={{ margin: 0, fontFamily: "system-ui" }}>
+        {children}
+      </body>
     </html>
   );
 }
