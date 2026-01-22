@@ -12,11 +12,24 @@ export default function IntentClient() {
     <div style={{ padding: 24 }}>
       <h1>How would you like to get started?</h1>
 
-      {sell === "true" && <p>Selling flow enabled</p>}
+      {sell === "true" && (
+        <p style={{ marginTop: 12, color: "#555" }}>
+          If you also need to sell a property, we’ll help coordinate that after
+          your offer strategy is clear.
+        </p>
+      )}
 
-      <button onClick={() => router.push("/note")}>
-        Continue
-      </button>
+      <div style={{ marginTop: 24 }}>
+        <button onClick={() => router.push("/note")}>
+          Learn how offers work
+        </button>
+      </div>
+
+      <div style={{ marginTop: 12 }}>
+        <button onClick={() => router.push("/note")}>
+          I have a property in mind
+        </button>
+      </div>
     </div>
   );
 }
